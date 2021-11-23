@@ -99,7 +99,11 @@ normalized density of exposures $\rho(\tau)$. The above differential equation ha
 \begin{equation*}
     Y_{i}(\tau) = Y_i(0)\int_{0}^{\infty}\rho(\tau)e^{-\sigma_{i}\tau}d\tau
 \end{equation*}
-
+Upon closer inspection, we realize that
+\begin{equation*}
+    \frac{Y_{i}(\tau)}{Y_i(0)} = \int_{0}^{\infty}\rho(\tau)e^{-\sigma_{i}\tau}d\tau = \tilde{\rho}(\sigma_{i})
+\end{equation*}
+Where $\tilde{\rho}$ is the Laplace transform 
 \section*{Isomers}
 \section*{T and $Y_{e}$ dependent rates}
 \section*{Multizone framework development}
