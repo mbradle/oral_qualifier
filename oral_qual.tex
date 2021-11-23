@@ -69,9 +69,38 @@ However, it terminates in a Bismuth, Lead, Polonium loop:
 \end{align*}
 
 \section*{Neutron Exposure}
+
+For a given species 'i' whose only interaction is neutron capture, its total abundance over time is governed by:
+
+\begin{align*}
+    \frac{d Y_{i}}{dt} &= -N_{A}\left<\sigma v\right>\rho Y_{i}Y_{n}\\
+    \frac{d Y_{i}}{dt} &= -n_{n} \left<\sigma v\right> Y_{i}
+\end{align*}
+
+The differential exposure and neutron capture cross-section are respectively given by:
+\begin{align*}
+    d\tau &= n_{n}v_{T}dt\\
+    \sigma_{i} &= \frac{\left<\sigma v\right>}{v_{T}}
+\end{align*}
+
+Where $n_{n}$ is the neutron number density and $v_{T}$ is the thermal velocity of neutrons. The first order differential equation 
+now becomes
+
+\begin{equation*}
+    \frac{d Y_{i}}{d\tau} = -\sigma_{i}Y_{i}
+\end{equation*}
+And has a solution
+\begin{equation*}
+    Y_{i}(\tau) = Y_{i}(0)e^{-\sigma_{i}\tau}
+\end{equation*}
+
+Realistically, we always have an ensemble of species with unique cross-sections. Such an ensemble requires the introduction  of a 
+normalized density of exposures $\rho(\tau)$. The above differential equation has the general solution:
+\begin{equation*}
+    Y_{i}(\tau) = Y_i(0)\int_{0}^{\infty}\rho(\tau)e^{-\sigma_{i}\tau}d\tau
+\end{equation*}
+
 \section*{Isomers}
-
-
 \section*{T and $Y_{e}$ dependent rates}
 \section*{Multizone framework development}
 \section*{My research}
