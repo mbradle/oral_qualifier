@@ -154,9 +154,9 @@ evolution of the density of exposures
 s-Process calculations can take various routes to reach its terminal loop. The branching of the s-process depends on a multitude of 
 conditions, one of which is the isomeric state of a given isotope. The isomeric state of a given species has a $\beta$-decay rate 
 orders of magnitude higher than that of the ground state. In collaboration with Los Alamos [insert citation], we focus on the 
-effect of isomeric $^{85}Kr$, since it is a pivoting isotope. To build some understanding on how the isomers may build up in a system, 
+effect of isomeric $^{85}$Kr, since it is a pivoting isotope. To build some understanding on how the isomers may build up in a system, 
 I developed a simplistic two-species network found \href{https://github.com/jaadt7/isomer_intuition}{here}.
-The two species involved are the meta-stable, isomeric, and ground state of $^{85}Kr$.\\ 
+The two species involved are the meta-stable, isomeric, and ground state of $^{85}$Kr.\\ 
 
 The equations being modeled are:
 
@@ -206,20 +206,34 @@ the equilibrium value and catches up to it. The rate is high enough that the abu
 
 For proper network calculations, our collaborators have supplied us with structural and compositional data. This data is generated 
 by evolving a 2 $M_{\odot}$ star with Z = 0.02 going through the TP-AGB phase with the MESA code [version needed]\cite{paxton2010modules,paxton2013modules,paxton2015modules,paxton2018modules,paxton2019modules}.
-The structural data comprises 5 mass coordinates, covering the extent of the $^{13}C$ pocket, along with the temperature and density 
-of those coordinates over time. Libnucnet was run along these trajectories twice, once with the reactions pertaining to $^{85}Kr_{m}$ 
+The structural data comprises 5 mass coordinates, covering the extent of the $^{13}$C pocket, along with the temperature and density 
+of those coordinates over time. Libnucnet was run along these trajectories twice, once with the reactions pertaining to $^{85}$Kr$_{m}$ 
 and the other without the isomer altogether. This was done on palmetto in parallel for multiple temperature scales for each mass 
 coordinate trajectory.\\
 
-Fig. \ref{int_cur} shows a sampling of the performed calculations. It is a flow diagram of integrated currents centered at $^{85}Kr$. 
+Fig. \ref{int_cur} shows a sampling of the performed calculations. It is a flow diagram of integrated currents centered at $^{85}$Kr. 
 This particular calculation was done at the lowest mass coordinate which has the highest temperature profile of them all. To be more 
 specific, the flow chart is in fact a difference of integrated currents at the end of the simulation. It is subtracting the current 
-due to the modified network from the unmodified network. That is why the arrow is pointing from $^{85}Rb$ down to $^{85}Kr$. It 
-also illustrates why $^{85}Kr$ is a pivoting point. The meta-stable state allows the build up to Strontium through, $^{85}Sr$, while 
-neglecting it results in Strontium building up through $^{88}Sr$. Accounting for isomers in network calculations might help explain 
+due to the modified network from the unmodified network. That is why the arrow is pointing from $^{85}$Rb down to $^{85}$Kr. It 
+also illustrates why $^{85}$Kr is a pivoting point. The meta-stable state allows the build up to Strontium through, $^{85}$Sr, while 
+neglecting it results in Strontium building up through $^{88}$Sr. Accounting for isomers in network calculations might help explain 
 the enhanced observed abundance of lighter stable isotopes.
 
 \section*{T and $Y_{e}$ dependent rates}
+
+$^{205}$Pb is exclusively produced by s-process nucleosynthesis. With a half-life of about 17 Myr, it decays into $^{205}$Tl via 
+electron capture:
+
+\begin{align*}
+    \ce{^205Pb + e^- -> ^205Tl + \nu_{e}}
+\end{align*}
+
+Evidence for $^{205}$Pb's existence in the early solar system has come from the analysis of carbonaceous chondrites\cite{baker2010thallium}. 
+Since $^{205}$Pb decay's via electron capture, it would be prudent that the reaction rate not only depend on temperature, but also on 
+the electron mass fraction, $Y_{e}$.
+
+Here we aim to study the effect on these 2D reaction rates within a stellar environment, to see how various mixing processes would affect 
+the final $^{205}$Pb yield.
 
 \section*{Multi-zone framework development}
 
@@ -250,7 +264,7 @@ the temperature value with a color map scale. The same could be done for other p
 coefficients, or even mass fractions of species of interest. The current downside of the method is the amount of converged stellar 
 models available in a saved file. To remedy this, a 2D interpolator is being developed to smoothly to pad with appropriate 
 approximations. More converged models could be saved, but it is avoided for memory purposes. The color map utility allows for a 
-smooth depiction of how the temperature evolves in time over the whole star  
+smooth global analysis of a given property.  
 
 \singlespacing
 
