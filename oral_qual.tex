@@ -21,14 +21,26 @@ Advisor: Prof. Bradley S. Meyer}
 \maketitle
 
 \section*{Abstract}
-The aim of this document is to provide the committee a brief layout of the aspects that will comprise my dissertation. The first 
-section is a brief recap, but granted not a complete one, on the s-process. The following four will outline aspects of the s-process 
-that are of interest. The final one describes how it all comes together
+The s-process of nucleosynthesis is the slow neutron-capture process.  It occurs
+in the setting of stellar evolution and is particularly active in stellar
+zones that undergo mixing.  My thesis will involve studies on how the
+nucleosynthesis interacts with the stellar mixing processes.  By providing
+detailed studies of these interactions, my results will help clarify nuclear
+yields from detailed stellar models.
+
+I first present a brief review of the s process.  I then discuss the following
+three effects: 1) the distribution of neutron exposures,
+2) long-lived isomers and their role in s-process branchings,
+and 3) temperature- and electron-density-dependent beta decay rates.
+I discuss how these effects interact with the s process
+and tools I am developing to study these effects in mixing environments.
+I then present the various multi-zone nucleosynthesis tools I am developing
+and a timeline for the topics under study.
 
 \section*{The s-process}
 The slow neutron capture process, s-process, is a series of reactions in nuclear astrophysics that is responsible 
 for synthesizing half the elements heavier than Iron. It occurs in moderately neutron rich environments and requires 
-existing Iron as a seed nucleus. The reactions involved are a series of neutron captures and $\beta^{-}$ decays. Heavier 
+existing heavy nuclei (such as $^{56}$Fe) as seeds. The reactions involved are a series of neutron captures and $\beta^{-}$ decays. Heavier 
 isotopes will form until one that is $\beta$ unstable is reached, and its decay rate is higher than the capture rate; as illustrated 
 in Fig. \ref{fig 1}.
 
@@ -144,14 +156,21 @@ exponential, Poisson, and Gaussian distributions; showing the method's effective
 
 Building the testing environment involved setting up the multi-zone version of the network with s-process like conditions and artificial 
 species with user defined cross-sections. Based on the discretization scheme provided by the GS method, we developed an algorithm 
-that creates the appropriate amount of "dummy" species with specified neutron capture cross-sections. The species were loaded into the 
+that creates the appropriate amount of ``dummy'' species with specified neutron capture cross-sections. The species were loaded into the 
 multi-zone code, and the GS method was applied iteratively on the output. Animations were used to visualize the time 
 evolution of the density of exposures 
 
 \section*{Isomers}
 
 s-Process calculations can take various routes to reach its terminal loop. The branching of the s-process depends on a multitude of 
-conditions, one of which is the isomeric state of a given isotope. The isomeric state of a given species has a $\beta$-decay rate 
+conditions, one of which is the isomeric state of a given isotope. Normally,
+in stellar conditions, an ensemble of nuclei of a given type exist in
+an equilibrium (Boltzmann) distribution among excited states.  In some
+species, particularly those with high spin differences between the ground
+state and an excited state, the internal transition rates are slower than
+other rates for reactions involving the species.  This means that the ensemble
+of nuclei of that type may not be in an Boltzmann distribution.
+The isomeric state of a given species has a $\beta$-decay rate 
 orders of magnitude higher than that of the ground state. In collaboration with Los Alamos [insert citation], we focus on the 
 effect of isomeric $^{85}$Kr, since it is a pivoting isotope. To build some understanding on how the isomers may build up in a system, 
 I developed a simplistic two-species network found \href{https://github.com/jaadt7/isomer_intuition}{here}.
